@@ -47,6 +47,6 @@ deploy on your own cloud provider and share the link with us.
 Once you have submitted the assignment, we will review your code and if it meets our requirements, we will get back to you within a week and schedule 1st round of interview. <br>
 in the 1st round of interview, we will discuss the code and build few additional features.
 
-### <i>Name</i>: Rajeev K L
-### <i>Email</i>: rajeev@almabase.com
+### <i>Name</i>: Satyam Srivastava
+### <i>Email</i>: satyams876@gmail.com
 ### <i>JD</i>: [Software Engineer](https://www.almabase.com/careers?ashby_jid=27df3851-fcea-47e2-af51-4c5aec17ff67)
