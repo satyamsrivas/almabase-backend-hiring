@@ -2,6 +2,8 @@ import logging
 from time import sleep
 
 from .models import Site, UserRecords
+from celery import shared_task
+from website.models import Site, UserRecords
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -55,3 +57,24 @@ def task_05(site_id: int):
         sleep(TIME_MULTIPLIER)
         logger.info("Task 05: {} processed".format(record.name))
     return True
+
+
+
+TASK_MAP = {
+    1: task_01,
+    2: task_02,
+    3: task_03,
+    4: task_04,
+    5: task_05,
+}
+
+@shared_task
+def execute_task(job_type, site_id):
+    """
+    Executes a task based on job type and site ID.
+    """
+    if job_type not in TASK_MAP:
+        raise ValueError(f"Invalid job type: {job_type}")
+
+    task_function = TASK_MAP[job_type]
+    return task_function(site_id)
